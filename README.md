@@ -7,4 +7,7 @@ In order to create powerful applications that can take take in real world data, 
 #Starting Out
 
 ##Installation
-```curl LO
+```sh
+curl -LO https://github.com/neale/relations.git
+
+``` 
