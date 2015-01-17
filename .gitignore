@@ -1,0 +1,11 @@
+**/node_modules
+**/mongo
+*.csv
+*.map
+*.pyc
+*.elf
+*.o
+*.sym
+*.lss
+*.lst
+*.swp
