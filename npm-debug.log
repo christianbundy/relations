@@ -1,0 +1,71 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', 'express' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 verbose node symlink /usr/bin/node
+5 warn package.json net@1.0.2 net is also the name of a node core module.
+6 warn package.json net@1.0.2 'repositories' (plural) Not supported. Please pick one as the 'repository' field
+7 warn package.json net@1.0.2 No README data
+8 warn package.json util@0.10.3 util is also the name of a node core module.
+9 verbose cache add [ 'express', null ]
+10 verbose cache add name=undefined spec="express" args=["express",null]
+11 verbose parsed url { protocol: null,
+11 verbose parsed url   slashes: null,
+11 verbose parsed url   auth: null,
+11 verbose parsed url   host: null,
+11 verbose parsed url   port: null,
+11 verbose parsed url   hostname: null,
+11 verbose parsed url   hash: null,
+11 verbose parsed url   search: null,
+11 verbose parsed url   query: null,
+11 verbose parsed url   pathname: 'express',
+11 verbose parsed url   path: 'express',
+11 verbose parsed url   href: 'express' }
+12 silly lockFile f3c62de4-express express
+13 verbose lock express /home/enratz/.npm/f3c62de4-express.lock
+14 silly lockFile f3c62de4-express express
+15 silly lockFile f3c62de4-express express
+16 verbose addNamed [ 'express', '' ]
+17 verbose addNamed [ null, '*' ]
+18 silly lockFile 64a534c1-express express@
+19 verbose lock express@ /home/enratz/.npm/64a534c1-express.lock
+20 silly addNameRange { name: 'express', range: '*', hasData: false }
+21 verbose request where is /express
+22 verbose request registry https://registry.npmjs.org/
+23 verbose request id 7037e09d078be1fd
+24 verbose url raw /express
+25 verbose url resolving [ 'https://registry.npmjs.org/', './express' ]
+26 verbose url resolved https://registry.npmjs.org/express
+27 verbose request where is https://registry.npmjs.org/express
+28 info trying registry request attempt 1 at 21:44:15
+29 http GET https://registry.npmjs.org/express
+30 info retry will retry, error on last attempt: Error: Hostname/IP doesn't match certificate's altnames
+31 info trying registry request attempt 2 at 21:44:31
+32 http GET https://registry.npmjs.org/express
+33 info retry will retry, error on last attempt: Error: Hostname/IP doesn't match certificate's altnames
+34 info trying registry request attempt 3 at 21:45:34
+35 http GET https://registry.npmjs.org/express
+36 silly lockFile 64a534c1-express express@
+37 silly lockFile 64a534c1-express express@
+38 error Error: Hostname/IP doesn't match certificate's altnames
+38 error     at SecurePair.<anonymous> (tls.js:1390:23)
+38 error     at SecurePair.emit (events.js:92:17)
+38 error     at SecurePair.maybeInitFinished (tls.js:980:10)
+38 error     at CleartextStream.read [as _read] (tls.js:472:13)
+38 error     at CleartextStream.Readable.read (_stream_readable.js:341:10)
+38 error     at EncryptedStream.write [as _write] (tls.js:369:25)
+38 error     at doWrite (_stream_writable.js:226:10)
+38 error     at writeOrBuffer (_stream_writable.js:216:5)
+38 error     at EncryptedStream.Writable.write (_stream_writable.js:183:11)
+38 error     at write (_stream_readable.js:602:24)
+38 error     at flow (_stream_readable.js:611:7)
+38 error     at Socket.pipeOnReadable (_stream_readable.js:643:5)
+39 error If you need help, you may report this *entire* log,
+39 error including the npm and node versions, at:
+39 error     <http://github.com/npm/npm/issues>
+40 error System Linux 3.13.0-37-generic
+41 error command "/usr/bin/node" "/usr/bin/npm" "install" "express"
+42 error cwd /home/enratz/repos/relations
+43 error node -v v0.10.35
+44 error npm -v 1.4.28
+45 verbose exit [ 1, true ]
