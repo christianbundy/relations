@@ -25,6 +25,9 @@ var serialPort = new Serial('/dev/ttyUSB0', {
 }, true);
 
 //log serial port to see if pipe is good 
+function cb(){
+  console.log("calling back");
+}
 
 serialPort.on('open', function(err) { //opens the serial port
   
@@ -50,16 +53,16 @@ serialPort.on('data', function (data, error) {
   }
   console.log(data);
   if (ready){
-    sendData(data);
+    writeDrain(data, cb);
     ready = !ready;
   }
 });
 
 var lastEventIds = {};
 
-function sendData(packet) {
-  var nowTime = new Date().getTime();
-
+function writeDrain(data, cb) {
+  
+ var nowTime = new Date().getTime();
   var dataToAdd = {
       id:      packet[0],
       event:   packet[1],
@@ -72,17 +75,7 @@ function sendData(packet) {
   };
   
   socket.write(JSON.stringify(dataToAdd));
-function writeDrain(data, callback){
-  
-  serialPort.pause();
-  serialPort.flush(function(){
-        console.log("flushed");
-  });
-  serialPort.write("data: " + dataToAdd, function(err){
-    if(err){
-      console.log("error: " + err);
-    }
-    serialport.
+
   serialPort.write("data" + dataToAdd, function(err){
     
     if(err){
@@ -90,6 +83,16 @@ function writeDrain(data, callback){
     }
   });
 
+  serialPort.pause();
+
+  serialPort.flush(function(){
+    console.log("flushed");   
+    
+    setTimeout(function(){
+      console.log("\n");
+      serialPort.resume();
+    }, 500)
+  })
 }
 
 console.log('Server running on localhost:' + port);

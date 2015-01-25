@@ -49,8 +49,6 @@ SRC =	$(TARGET).c \
 	spi.c \
 	radioctl.c \
 	uart.c \
-	usb_debug_only.c \
-	print.c \
 	i2c.c \
 	timer.c 
 
